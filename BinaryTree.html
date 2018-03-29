@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>排序二叉树</title>
+</head>
+<body>
+<img src="结构图.jpg" alt="二叉树结构图" width="100%" height="100%">
+<script src="BinaryTree.js"></script>
+<script>
+
+
+  // 初始化节点数
+  var nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13];
+  var binaryTree = new BinaryTree();
+  nodes.forEach(function (value) {
+    binaryTree.insert(value)
+  })
+  // 中序遍历 升序
+  // 遍历回调
+  var callback = function (value) {
+    console.log(value);
+  }
+
+  // 前序
+  console.log("前序：");
+  binaryTree.preOrderTraverse(callback)
+  // 中序
+  console.log("中序：");
+  binaryTree.inOrderTraverse(callback)
+  // 后续
+   console.log("后序：");
+   binaryTree.postOrderTraverse(callback)
+
+  console.log("最小值：" + binaryTree.min());
+  console.log("最大值：" + binaryTree.max());
+  console.log("搜索7：" + binaryTree.search(7));
+  console.log("搜索2：" + binaryTree.search(2));
+  // 删除节点值为3的节点
+  console.log("删除节点值为3后的二叉树：");
+  binaryTree.remove(3)
+</script>
+</body>
+</html>
